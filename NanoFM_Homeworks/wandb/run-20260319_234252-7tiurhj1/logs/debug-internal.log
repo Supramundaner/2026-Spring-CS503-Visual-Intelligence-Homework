@@ -1,0 +1,17 @@
+{"time":"2026-03-19T23:42:53.087494028+08:00","level":"INFO","msg":"wandb-core"}
+{"time":"2026-03-19T23:42:53.088265244+08:00","level":"INFO","msg":"stream: starting","core version":"0.25.1"}
+{"time":"2026-03-19T23:42:53.85634011+08:00","level":"INFO","msg":"stream: created new stream","id":"7tiurhj1"}
+{"time":"2026-03-19T23:42:53.856430531+08:00","level":"INFO","msg":"handler: started"}
+{"time":"2026-03-19T23:42:53.857492365+08:00","level":"INFO","msg":"stream: started"}
+{"time":"2026-03-19T23:42:53.857598887+08:00","level":"INFO","msg":"sender: started"}
+{"time":"2026-03-19T23:42:53.857716368+08:00","level":"INFO","msg":"writer: started","stream_id":"7tiurhj1"}
+{"time":"2026-03-19T23:42:54.448043937+08:00","level":"ERROR","msg":"api: HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2026-03-19T23:42:54.448157481+08:00","level":"ERROR","msg":"runupserter: failed to init run","error":"returned error 404: {\"data\":{\"upsertBucket\":null},\"errors\":[{\"message\":\"entity \\u003cYOUR_WANDB_ENTITY_NAME\\u003e not found during upsertBucket\",\"path\":[\"upsertBucket\"]}]}"}
+{"time":"2026-03-19T23:42:54.457837405+08:00","level":"INFO","msg":"stream: closing"}
+{"time":"2026-03-19T23:42:54.458049977+08:00","level":"ERROR","msg":"sender: uploadConfigFile: runhandle: run not yet initialized"}
+{"time":"2026-03-19T23:42:54.458439632+08:00","level":"ERROR","msg":"runfiles: runhandle: run not yet initialized"}
+{"time":"2026-03-19T23:42:54.458748666+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-19T23:42:54.458763063+08:00","level":"INFO","msg":"handler: closed"}
+{"time":"2026-03-19T23:42:54.458789232+08:00","level":"INFO","msg":"sender: closed"}
+{"time":"2026-03-19T23:42:54.458793921+08:00","level":"INFO","msg":"stream: closed"}
+{"time":"2026-03-19T23:42:54.460524528+08:00","level":"ERROR","msg":"stream: runURL: runhandle: run not yet initialized"}

@@ -1,0 +1,188 @@
+_wandb:
+    value:
+        cli_version: 0.25.1
+        e:
+            v1kbe690o4qb0ar9sxn8upamzofiajas:
+                args:
+                    - --config
+                    - cfgs/nanoGPT/tinystories_d8w512.yaml
+                codePath: NanoFM_Homeworks/run_training.py
+                codePathLocal: run_training.py
+                cpu_count: 16
+                cpu_count_logical: 32
+                cudaVersion: "12.4"
+                disk:
+                    /:
+                        total: "3778773131264"
+                        used: "3573491077120"
+                email: yaoaa@connect.ust.hk
+                executable: /home/yaoaa/anaconda3/envs/nanofm/bin/python3.10
+                git:
+                    commit: d339111897c4b8480e5ea4cd9cf1add2e0659d77
+                    remote: https://github.com/EPFL-VILAB/2026-Spring-CS503-Visual-Intelligence-Homework/
+                gpu: NVIDIA GeForce RTX 4090
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 16384
+                      memoryTotal: "25757220864"
+                      name: NVIDIA GeForce RTX 4090
+                      uuid: GPU-48132e58-40fb-90dc-db39-5fdac962d276
+                    - architecture: Ada
+                      cudaCores: 16384
+                      memoryTotal: "25757220864"
+                      name: NVIDIA GeForce RTX 4090
+                      uuid: GPU-1287affa-fd30-5f86-4a83-c2667e780ae8
+                    - architecture: Ada
+                      cudaCores: 16384
+                      memoryTotal: "25757220864"
+                      name: NVIDIA GeForce RTX 4090
+                      uuid: GPU-d96af695-0629-42fc-357b-104cb76bfa39
+                    - architecture: Ada
+                      cudaCores: 16384
+                      memoryTotal: "25757220864"
+                      name: NVIDIA GeForce RTX 4090
+                      uuid: GPU-4aac82bd-28c2-cf4c-cc50-27f3878a9a56
+                host: ckcpu1-4090
+                memory:
+                    total: "270061711360"
+                os: Linux-6.8.0-52-generic-x86_64-with-glibc2.35
+                program: /home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py
+                python: CPython 3.10.20
+                root: /home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks
+                startedAt: "2026-03-19T15:44:49.437238Z"
+                writerId: v1kbe690o4qb0ar9sxn8upamzofiajas
+        m: []
+        python_version: 3.10.20
+        t:
+            "1":
+                - 1
+                - 50
+            "2":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 50
+                - 51
+                - 53
+                - 71
+            "3":
+                - 13
+                - 16
+            "4": 3.10.20
+            "5": 0.25.1
+            "12": 0.25.1
+            "13": linux-x86_64
+auto_resume:
+    value: true
+batch_size:
+    value: 128
+clip_grad:
+    value: 1
+config_path:
+    value: cfgs/nanoGPT/tinystories_d8w512.yaml
+device:
+    value: cuda
+dist_backend:
+    value: nccl
+dist_url:
+    value: env://
+distributed:
+    value: true
+dtype:
+    value: fp16
+eval_freq:
+    value: 100
+eval_loader_config:
+    value:
+        _target_: nanofm.data.text.huggingface_datasets.create_hf_dataloader
+        add_padding_tokens: true
+        add_sos_eos_tokens: true
+        batch_size: 128
+        dataset_id: roneneldan/TinyStories
+        distributed: true
+        increase_seq_len_by_one: true
+        infinite: false
+        max_seq_len: 256
+        num_workers: 10
+        pin_memory: true
+        shuffle: false
+        split: validation
+        tokenizer_path: gpt2
+find_unused_params:
+    value: false
+global_vars:
+    value:
+        batch_size: 128
+        max_seq_len: 256
+gpu:
+    value: 0
+log_wandb:
+    value: true
+lr:
+    value: 0.0003
+min_lr:
+    value: 1e-06
+model_config:
+    value:
+        _target_: nanofm.models.gpt.GPT
+        depth: 8
+        dim: 512
+        head_dim: 64
+        max_seq_len: 256
+        padding_idx: 50257
+        seq_read_key: input_ids
+        vocab_size: 50304
+num_tokens_per_sample:
+    value: 256
+opt_betas:
+    value:
+        - 0.9
+        - 0.95
+opt_eps:
+    value: 1e-08
+output_dir:
+    value: ./outputs/nanoGPT/tinystories_d8w512
+rank:
+    value: 0
+resume:
+    value: ""
+run_name:
+    value: nanoGPT/tinystories_d8w512
+save_ckpt_freq:
+    value: 200
+seed:
+    value: 0
+start_iteration:
+    value: 0
+total_tokens:
+    value: 1000
+train_loader_config:
+    value:
+        _target_: nanofm.data.text.huggingface_datasets.create_hf_dataloader
+        add_padding_tokens: true
+        add_sos_eos_tokens: true
+        batch_size: 128
+        dataset_id: roneneldan/TinyStories
+        distributed: true
+        increase_seq_len_by_one: true
+        infinite: true
+        max_seq_len: 256
+        num_workers: 10
+        pin_memory: true
+        shuffle: true
+        split: train
+        tokenizer_path: gpt2
+wandb_entity:
+    value: yaoaa-hkust
+wandb_project:
+    value: CS503_nanoGPT
+wandb_run_name:
+    value: tinystories_d8w512
+warmup_tokens:
+    value: 100
+weight_decay:
+    value: 0.05
+world_size:
+    value: 2

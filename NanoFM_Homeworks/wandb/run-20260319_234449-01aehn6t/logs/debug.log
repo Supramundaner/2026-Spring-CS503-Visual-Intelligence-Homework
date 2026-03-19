@@ -1,0 +1,21 @@
+2026-03-19 23:44:49,438 INFO    MainThread:3843455 [wandb_setup.py:_flush():81] Current SDK version is 0.25.1
+2026-03-19 23:44:49,438 INFO    MainThread:3843455 [wandb_setup.py:_flush():81] Configure stats pid to 3843455
+2026-03-19 23:44:49,438 INFO    MainThread:3843455 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-03-19 23:44:49,438 INFO    MainThread:3843455 [wandb_init.py:setup_run_log_directory():717] Logging user logs to /home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/wandb/run-20260319_234449-01aehn6t/logs/debug.log
+2026-03-19 23:44:49,438 INFO    MainThread:3843455 [wandb_init.py:setup_run_log_directory():718] Logging internal logs to /home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/wandb/run-20260319_234449-01aehn6t/logs/debug-internal.log
+2026-03-19 23:44:49,438 INFO    MainThread:3843455 [wandb_init.py:init():844] calling init triggers
+2026-03-19 23:44:49,438 INFO    MainThread:3843455 [wandb_init.py:init():849] wandb.init called with sweep_config: {}
+config: {'run_name': 'nanoGPT/tinystories_d8w512', 'model_config': {'_target_': 'nanofm.models.gpt.GPT', 'seq_read_key': 'input_ids', 'dim': 512, 'depth': 8, 'head_dim': 64, 'vocab_size': 50304, 'max_seq_len': 256, 'padding_idx': 50257}, 'train_loader_config': {'_target_': 'nanofm.data.text.huggingface_datasets.create_hf_dataloader', 'dataset_id': 'roneneldan/TinyStories', 'split': 'train', 'tokenizer_path': 'gpt2', 'add_padding_tokens': True, 'add_sos_eos_tokens': True, 'batch_size': 128, 'max_seq_len': 256, 'increase_seq_len_by_one': True, 'infinite': True, 'distributed': True, 'num_workers': 10, 'pin_memory': True, 'shuffle': True}, 'eval_loader_config': {'_target_': 'nanofm.data.text.huggingface_datasets.create_hf_dataloader', 'dataset_id': 'roneneldan/TinyStories', 'split': 'validation', 'tokenizer_path': 'gpt2', 'add_padding_tokens': True, 'add_sos_eos_tokens': True, 'batch_size': 128, 'max_seq_len': 256, 'increase_seq_len_by_one': True, 'infinite': False, 'distributed': True, 'num_workers': 10, 'pin_memory': True, 'shuffle': False}, 'batch_size': 128, 'total_tokens': 1000, 'warmup_tokens': 100, 'num_tokens_per_sample': 256, 'dtype': 'fp16', 'seed': 0, 'opt_eps': 1e-08, 'opt_betas': [0.9, 0.95], 'lr': 0.0003, 'min_lr': 1e-06, 'weight_decay': 0.05, 'clip_grad': 1.0, 'eval_freq': 100, 'save_ckpt_freq': 200, 'output_dir': './outputs/nanoGPT/tinystories_d8w512', 'resume': '', 'start_iteration': 0, 'auto_resume': True, 'device': 'cuda', 'find_unused_params': False, 'dist_url': 'env://', 'log_wandb': True, 'wandb_project': 'CS503_nanoGPT', 'wandb_entity': 'yaoaa-hkust', 'wandb_run_name': 'tinystories_d8w512', 'global_vars': {'batch_size': 128, 'max_seq_len': 256}, 'config_path': 'cfgs/nanoGPT/tinystories_d8w512.yaml', 'rank': 0, 'world_size': 2, 'gpu': 0, 'distributed': True, 'dist_backend': 'nccl', '_wandb': {}}
+2026-03-19 23:44:49,438 INFO    MainThread:3843455 [wandb_init.py:init():892] starting backend
+2026-03-19 23:44:49,872 INFO    MainThread:3843455 [wandb_init.py:init():895] sending inform_init request
+2026-03-19 23:44:49,875 INFO    MainThread:3843455 [wandb_init.py:init():903] backend started and connected
+2026-03-19 23:44:49,876 INFO    MainThread:3843455 [wandb_init.py:init():973] updated telemetry
+2026-03-19 23:44:49,880 INFO    MainThread:3843455 [wandb_init.py:init():997] communicating run to backend with 90.0 second timeout
+2026-03-19 23:44:51,450 INFO    MainThread:3843455 [wandb_init.py:init():1042] starting run threads in backend
+2026-03-19 23:44:51,551 INFO    MainThread:3843455 [wandb_run.py:_console_start():2524] atexit reg
+2026-03-19 23:44:51,551 INFO    MainThread:3843455 [wandb_run.py:_redirect():2373] redirect: wrap_raw
+2026-03-19 23:44:51,551 INFO    MainThread:3843455 [wandb_run.py:_redirect():2442] Wrapping output streams.
+2026-03-19 23:44:51,551 INFO    MainThread:3843455 [wandb_run.py:_redirect():2465] Redirects installed.
+2026-03-19 23:44:51,554 INFO    MainThread:3843455 [wandb_init.py:init():1082] run started, returning control to user process
+2026-03-19 23:50:24,276 INFO    wandb-AsyncioManager-main:3843455 [service_client.py:_forward_responses():134] Reached EOF.
+2026-03-19 23:50:24,276 INFO    wandb-AsyncioManager-main:3843455 [mailbox.py:close():155] Closing mailbox, abandoning 1 handles.

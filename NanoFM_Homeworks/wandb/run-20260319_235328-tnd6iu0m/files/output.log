@@ -1,0 +1,134 @@
+Logging to wandb project CS503_nanoGPT, entity yaoaa-hkust, run name tinystories_d8w512
+Namespace(run_name='nanoGPT/tinystories_d8w512', model_config={'_target_': 'nanofm.models.gpt.GPT', 'seq_read_key': 'input_ids', 'dim': 512, 'depth': 8, 'head_dim': 64, 'vocab_size': 50304, 'max_seq_len': 256, 'padding_idx': 50257}, train_loader_config={'_target_': 'nanofm.data.text.huggingface_datasets.create_hf_dataloader', 'dataset_id': 'roneneldan/TinyStories', 'split': 'train', 'tokenizer_path': 'gpt2', 'add_padding_tokens': True, 'add_sos_eos_tokens': True, 'batch_size': 128, 'max_seq_len': 256, 'increase_seq_len_by_one': True, 'infinite': True, 'distributed': True, 'num_workers': 10, 'pin_memory': True, 'shuffle': True}, eval_loader_config={'_target_': 'nanofm.data.text.huggingface_datasets.create_hf_dataloader', 'dataset_id': 'roneneldan/TinyStories', 'split': 'validation', 'tokenizer_path': 'gpt2', 'add_padding_tokens': True, 'add_sos_eos_tokens': True, 'batch_size': 128, 'max_seq_len': 256, 'increase_seq_len_by_one': True, 'infinite': False, 'distributed': True, 'num_workers': 10, 'pin_memory': True, 'shuffle': False}, batch_size=128, total_tokens=1000, warmup_tokens=100, num_tokens_per_sample=256, dtype='fp16', seed=0, opt_eps=1e-08, opt_betas=[0.9, 0.95], lr=0.0003, min_lr=1e-06, weight_decay=0.05, clip_grad=1.0, eval_freq=100, save_ckpt_freq=200, output_dir='./outputs/nanoGPT/tinystories_d8w512', resume='', start_iteration=0, auto_resume=True, device='cuda', find_unused_params=False, dist_url='env://', log_wandb=True, wandb_project='CS503_nanoGPT', wandb_entity='yaoaa-hkust', wandb_run_name='tinystories_d8w512', global_vars={'batch_size': 128, 'max_seq_len': 256}, config_path='cfgs/nanoGPT/tinystories_d8w512.yaml', rank=0, world_size=2, gpu=0, distributed=True, dist_backend='nccl')
+Model = GPT(
+  (input_embedding): Embedding(50304, 512)
+  (trunk): TransformerTrunk(
+    (blocks): ModuleList(
+      (0-7): 8 x Block(
+        (norm1): LayerNorm()
+        (attn): Attention(
+          (qkv_proj): Linear(in_features=512, out_features=1536, bias=False)
+          (attn_out_proj): Linear(in_features=512, out_features=512, bias=False)
+        )
+        (norm2): LayerNorm()
+        (mlp): Mlp(
+          (fc1): Linear(in_features=512, out_features=2048, bias=False)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=2048, out_features=512, bias=False)
+        )
+      )
+    )
+  )
+  (out_norm): LayerNorm()
+  (to_logits): Linear(in_features=512, out_features=50304, bias=False)
+)
+Number of params: 76.816896 M
+Total tokens: 1000M
+Total iters: 15259
+Warmup tokens: 100M
+Warmup iters: 1526
+Eval freq: every 1526 iterations
+Save ckpt freq: every 3052 iterations
+Batch size per GPU = 128
+Total (effective) batch size = 256
+LR = 0.00030000
+Min LR = 0.00000100
+Param groups = {
+  "decay": {
+    "weight_decay": 0.05,
+    "params": [
+      "positional_embedding",
+      "input_embedding.weight",
+      "trunk.blocks.0.attn.qkv_proj.weight",
+      "trunk.blocks.0.attn.attn_out_proj.weight",
+      "trunk.blocks.0.mlp.fc1.weight",
+      "trunk.blocks.0.mlp.fc2.weight",
+      "trunk.blocks.1.attn.qkv_proj.weight",
+      "trunk.blocks.1.attn.attn_out_proj.weight",
+      "trunk.blocks.1.mlp.fc1.weight",
+      "trunk.blocks.1.mlp.fc2.weight",
+      "trunk.blocks.2.attn.qkv_proj.weight",
+      "trunk.blocks.2.attn.attn_out_proj.weight",
+      "trunk.blocks.2.mlp.fc1.weight",
+      "trunk.blocks.2.mlp.fc2.weight",
+      "trunk.blocks.3.attn.qkv_proj.weight",
+      "trunk.blocks.3.attn.attn_out_proj.weight",
+      "trunk.blocks.3.mlp.fc1.weight",
+      "trunk.blocks.3.mlp.fc2.weight",
+      "trunk.blocks.4.attn.qkv_proj.weight",
+      "trunk.blocks.4.attn.attn_out_proj.weight",
+      "trunk.blocks.4.mlp.fc1.weight",
+      "trunk.blocks.4.mlp.fc2.weight",
+      "trunk.blocks.5.attn.qkv_proj.weight",
+      "trunk.blocks.5.attn.attn_out_proj.weight",
+      "trunk.blocks.5.mlp.fc1.weight",
+      "trunk.blocks.5.mlp.fc2.weight",
+      "trunk.blocks.6.attn.qkv_proj.weight",
+      "trunk.blocks.6.attn.attn_out_proj.weight",
+      "trunk.blocks.6.mlp.fc1.weight",
+      "trunk.blocks.6.mlp.fc2.weight",
+      "trunk.blocks.7.attn.qkv_proj.weight",
+      "trunk.blocks.7.attn.attn_out_proj.weight",
+      "trunk.blocks.7.mlp.fc1.weight",
+      "trunk.blocks.7.mlp.fc2.weight",
+      "to_logits.weight"
+    ]
+  },
+  "no_decay": {
+    "weight_decay": 0.0,
+    "params": [
+      "trunk.blocks.0.norm1.weight",
+      "trunk.blocks.0.norm2.weight",
+      "trunk.blocks.1.norm1.weight",
+      "trunk.blocks.1.norm2.weight",
+      "trunk.blocks.2.norm1.weight",
+      "trunk.blocks.2.norm2.weight",
+      "trunk.blocks.3.norm1.weight",
+      "trunk.blocks.3.norm2.weight",
+      "trunk.blocks.4.norm1.weight",
+      "trunk.blocks.4.norm2.weight",
+      "trunk.blocks.5.norm1.weight",
+      "trunk.blocks.5.norm2.weight",
+      "trunk.blocks.6.norm1.weight",
+      "trunk.blocks.6.norm2.weight",
+      "trunk.blocks.7.norm1.weight",
+      "trunk.blocks.7.norm2.weight",
+      "out_norm.weight"
+    ]
+  }
+}
+optimizer settings: {'lr': 0.0003, 'weight_decay': 0.0, 'eps': 1e-08, 'betas': [0.9, 0.95]}
+Set warmup iters = 1526
+Start training for 1000M tokens = 15259 iterations
+Traceback (most recent call last):
+  File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py", line 398, in <module>
+    main(args)
+  File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py", line 220, in main
+    train_stats = train_loop(
+  File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py", line 294, in train_loop
+    grad_norm = loss_scaler(
+  File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/nanofm/utils/native_scaler.py", line 29, in __call__
+    self._scaler.scale(loss).backward(create_graph=create_graph)
+  File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/torch/_tensor.py", line 630, in backward
+    torch.autograd.backward(
+  File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/torch/autograd/__init__.py", line 364, in backward
+    _engine_run_backward(
+  File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/torch/autograd/graph.py", line 865, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 6.14 GiB. GPU 0 has a total capacity of 23.64 GiB of which 5.50 GiB is free. Including non-PyTorch memory, this process has 18.13 GiB memory in use. Of the allocated memory 17.49 GiB is allocated by PyTorch, and 47.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py", line 398, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py", line 220, in main
+[rank0]:     train_stats = train_loop(
+[rank0]:   File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py", line 294, in train_loop
+[rank0]:     grad_norm = loss_scaler(
+[rank0]:   File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/nanofm/utils/native_scaler.py", line 29, in __call__
+[rank0]:     self._scaler.scale(loss).backward(create_graph=create_graph)
+[rank0]:   File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/torch/_tensor.py", line 630, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/torch/autograd/__init__.py", line 364, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/torch/autograd/graph.py", line 865, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 6.14 GiB. GPU 0 has a total capacity of 23.64 GiB of which 5.50 GiB is free. Including non-PyTorch memory, this process has 18.13 GiB memory in use. Of the allocated memory 17.49 GiB is allocated by PyTorch, and 47.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

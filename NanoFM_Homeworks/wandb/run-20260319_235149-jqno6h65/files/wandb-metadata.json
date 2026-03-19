@@ -1,0 +1,65 @@
+{
+  "os": "Linux-6.8.0-52-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.10.20",
+  "startedAt": "2026-03-19T15:51:49.956927Z",
+  "args": [
+    "--config",
+    "cfgs/nanoGPT/tinystories_d8w512.yaml"
+  ],
+  "program": "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py",
+  "codePath": "NanoFM_Homeworks/run_training.py",
+  "codePathLocal": "run_training.py",
+  "git": {
+    "remote": "https://github.com/EPFL-VILAB/2026-Spring-CS503-Visual-Intelligence-Homework/",
+    "commit": "d339111897c4b8480e5ea4cd9cf1add2e0659d77"
+  },
+  "email": "yaoaa@connect.ust.hk",
+  "root": "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks",
+  "host": "ckcpu1-4090",
+  "executable": "/home/yaoaa/anaconda3/envs/nanofm/bin/python3.10",
+  "cpu_count": 16,
+  "cpu_count_logical": 32,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_count": 4,
+  "disk": {
+    "/": {
+      "total": "3778773131264",
+      "used": "3576424431616"
+    }
+  },
+  "memory": {
+    "total": "270061711360"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada",
+      "uuid": "GPU-48132e58-40fb-90dc-db39-5fdac962d276"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada",
+      "uuid": "GPU-1287affa-fd30-5f86-4a83-c2667e780ae8"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada",
+      "uuid": "GPU-d96af695-0629-42fc-357b-104cb76bfa39"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada",
+      "uuid": "GPU-4aac82bd-28c2-cf4c-cc50-27f3878a9a56"
+    }
+  ],
+  "cudaVersion": "12.4",
+  "writerId": "0pixm21nilbdv879miu52t99rit5oqz9"
+}

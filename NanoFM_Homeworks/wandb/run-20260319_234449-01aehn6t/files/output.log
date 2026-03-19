@@ -1,0 +1,98 @@
+Logging to wandb project CS503_nanoGPT, entity yaoaa-hkust, run name tinystories_d8w512
+Namespace(run_name='nanoGPT/tinystories_d8w512', model_config={'_target_': 'nanofm.models.gpt.GPT', 'seq_read_key': 'input_ids', 'dim': 512, 'depth': 8, 'head_dim': 64, 'vocab_size': 50304, 'max_seq_len': 256, 'padding_idx': 50257}, train_loader_config={'_target_': 'nanofm.data.text.huggingface_datasets.create_hf_dataloader', 'dataset_id': 'roneneldan/TinyStories', 'split': 'train', 'tokenizer_path': 'gpt2', 'add_padding_tokens': True, 'add_sos_eos_tokens': True, 'batch_size': 128, 'max_seq_len': 256, 'increase_seq_len_by_one': True, 'infinite': True, 'distributed': True, 'num_workers': 10, 'pin_memory': True, 'shuffle': True}, eval_loader_config={'_target_': 'nanofm.data.text.huggingface_datasets.create_hf_dataloader', 'dataset_id': 'roneneldan/TinyStories', 'split': 'validation', 'tokenizer_path': 'gpt2', 'add_padding_tokens': True, 'add_sos_eos_tokens': True, 'batch_size': 128, 'max_seq_len': 256, 'increase_seq_len_by_one': True, 'infinite': False, 'distributed': True, 'num_workers': 10, 'pin_memory': True, 'shuffle': False}, batch_size=128, total_tokens=1000, warmup_tokens=100, num_tokens_per_sample=256, dtype='fp16', seed=0, opt_eps=1e-08, opt_betas=[0.9, 0.95], lr=0.0003, min_lr=1e-06, weight_decay=0.05, clip_grad=1.0, eval_freq=100, save_ckpt_freq=200, output_dir='./outputs/nanoGPT/tinystories_d8w512', resume='', start_iteration=0, auto_resume=True, device='cuda', find_unused_params=False, dist_url='env://', log_wandb=True, wandb_project='CS503_nanoGPT', wandb_entity='yaoaa-hkust', wandb_run_name='tinystories_d8w512', global_vars={'batch_size': 128, 'max_seq_len': 256}, config_path='cfgs/nanoGPT/tinystories_d8w512.yaml', rank=0, world_size=2, gpu=0, distributed=True, dist_backend='nccl')
+Traceback (most recent call last):
+  File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'nanofm.models' has no attribute 'gpt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/nanofm/models/gpt.py", line 27, in <module>
+    class GPT(nn.Module):
+  File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/nanofm/models/gpt.py", line 170, in GPT
+    def forward(self, data_dict: Dict[str, Any]) -> Tuple[torch.Tensor, Dict[str, Any]]:
+NameError: name 'Tuple' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/utils.py", line 658, in _locate
+    raise ImportError(
+ImportError: Error loading 'nanofm.models.gpt.GPT':
+NameError("name 'Tuple' is not defined")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py", line 398, in <module>
+    main(args)
+  File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py", line 177, in main
+    model = instantiate(args.model_config).to(device)
+  File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'nanofm.models.gpt.GPT', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/utils.py", line 644, in _locate
+[rank0]:     obj = getattr(obj, part)
+[rank0]: AttributeError: module 'nanofm.models' has no attribute 'gpt'
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/utils.py", line 650, in _locate
+[rank0]:     obj = import_module(mod)
+[rank0]:   File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/importlib/__init__.py", line 126, in import_module
+[rank0]:     return _bootstrap._gcd_import(name[level:], package, level)
+[rank0]:   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+[rank0]:   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+[rank0]:   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+[rank0]:   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+[rank0]:   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+[rank0]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[rank0]:   File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/nanofm/models/gpt.py", line 27, in <module>
+[rank0]:     class GPT(nn.Module):
+[rank0]:   File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/nanofm/models/gpt.py", line 170, in GPT
+[rank0]:     def forward(self, data_dict: Dict[str, Any]) -> Tuple[torch.Tensor, Dict[str, Any]]:
+[rank0]: NameError: name 'Tuple' is not defined. Did you mean: 'tuple'?
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+[rank0]:     target = _locate(target)
+[rank0]:   File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/utils.py", line 658, in _locate
+[rank0]:     raise ImportError(
+[rank0]: ImportError: Error loading 'nanofm.models.gpt.GPT':
+[rank0]: NameError("name 'Tuple' is not defined")
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py", line 398, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/yaoaa/2026-Spring-CS503-Visual-Intelligence-Homework/NanoFM_Homeworks/run_training.py", line 177, in main
+[rank0]:     model = instantiate(args.model_config).to(device)
+[rank0]:   File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+[rank0]:     return instantiate_node(
+[rank0]:   File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+[rank0]:     _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+[rank0]:   File "/home/yaoaa/anaconda3/envs/nanofm/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+[rank0]:     raise InstantiationException(msg) from e
+[rank0]: hydra.errors.InstantiationException: Error locating target 'nanofm.models.gpt.GPT', set env var HYDRA_FULL_ERROR=1 to see chained exception.
