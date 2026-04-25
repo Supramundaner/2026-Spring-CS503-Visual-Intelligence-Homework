@@ -14,5 +14,6 @@ CONFIG_FILE=$1
 WANDB=$2
 NUM_GPUS=$3
 
+eval "$(/home/ao/miniconda3/bin/conda shell.bash hook)"
 conda activate nanofm
 export WANDB_API_KEY=$WANDB && OMP_NUM_THREADS=1 torchrun --nproc_per_node=$NUM_GPUS run_training.py --config $CONFIG_FILE

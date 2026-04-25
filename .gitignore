@@ -16,3 +16,15 @@ __pycache__
 .ipynb_checkpoints
 */wandb/*
 */checkpoints/*
+
+# Job logs
+*.out
+*.err
+
+# Model outputs and data
+**/outputs/
+**/tokenizer/
+**/clevr_com_304/
+
+# Generated assets
+NanoFM_Homeworks/notebooks/assets/*.png

@@ -26,6 +26,9 @@ export NCCL_DEBUG=INFO
 
 # === Run main script ===
 srun bash -c "
+  eval \"\$(/home/ao/miniconda3/bin/conda shell.bash hook)\"
+  conda activate nanofm
+
   TORCHRUN_ARGS=\"--node-rank=\${SLURM_PROCID} \
      --master-addr=\${MASTER_ADDR} \
      --master-port=\${MASTER_PORT} \
